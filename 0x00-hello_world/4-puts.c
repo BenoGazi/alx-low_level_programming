@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-/*prints out exactly what the text says with an open quotes*/
+/**
+ * main - the main function
+ *
+ * Return: always return 0
+ */
 
 int main(void)
 {
