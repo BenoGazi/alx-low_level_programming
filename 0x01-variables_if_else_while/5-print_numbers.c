@@ -1,10 +1,8 @@
 #include <stdio.h>
-/*
- * function  main - function prints numbers of base 10 starting with 0
+/**
+ * main - main function
  *
- * Return: always return 0
- *
- * main: main function
+ * Return: always rturn 0;
  */
 
 int main(void)
