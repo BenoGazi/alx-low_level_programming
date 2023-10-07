@@ -4,7 +4,7 @@
  * main - main function: to print all numbers of base16 in lowercase
  *
  * Return: always return 0
- *
+ * function print base hex digits
  */
 
 int main(void)
