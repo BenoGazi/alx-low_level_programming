@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	char i, j, m;
+	int i, j, m;
 
 	for (i = 0; i < 8; i++)
 	{
