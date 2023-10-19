@@ -20,5 +20,5 @@ char *string_toupper(char *upper)
 		}
 		i++;
 	}
-	return(upper);
+	return (upper);
 }
