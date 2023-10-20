@@ -25,16 +25,16 @@ char *cap_string(char *cap)
 		cap[i] == ')' || cap[i] == '{' || cap[i] == '}')
 	{
 		i++;
-	if (cap[i] >= 'a' && cap[i] <= 'z')
-	    {
-		    cap[i] -= 32;
-	    }
+		if (cap[i] >= 'a' && cap[i] <= 'z')
+		{
+			cap[i] -= 32;
+		}
 	}
-	else
-	{
-		i++;
-	}
-	}
-	return cap;
+		else
+		{
+			i++;
+		}
+		}
+		return (cap);
 }
 
