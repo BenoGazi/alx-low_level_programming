@@ -1,41 +1,40 @@
 #include "main.h"
 
 /**
- * cap_string - capitalise all words of a string
+ * cap_string - Capitalize the first letter of each word in a string.
  *
- * @cap: parameter
+ * @cap: The input string.
  *
- * Return: return string
+ * Return: The modified string.
  */
 
 char *cap_string(char *cap)
 {
 	int i = 0;
 
-	while (cap[i])
+	if (cap[0] >= 'a' && cap[0] <= 'z')
 	{
-		while (!(cap[i] >= 'a' && cap[i] <= 'z'))
-		{
-			i++;
-		}
-
-		if (cap[i - 1] == ' ' ||
-		cap[i - 1] == '\t' ||
-		cap[i - 1] == '\n' ||
-		cap[i - 1] == ',' ||
-		cap[i - 1] == ';' ||
-		cap[i - 1] == '.' ||
-		cap[i - 1] == '!' ||
-		cap[i - 1] == '?' ||
-		cap[i - 1] == '"' ||
-		cap[i - 1] == '(' ||
-		cap[i - 1] == ')' ||
-		cap[i - 1] == '{' ||
-		cap[i - 1] == '}' || i == 0)
-		{
-			cap[i] -= 32;
-			i++;
-		}
+		cap[0] -= 32;
 	}
-	return (cap);
+	while (cap[i] != '\0')
+	{
+	if (cap[i] == ' ' || cap[i] == '\t' || cap[i] == '\n' ||
+		cap[i] == ',' || cap[i] == ';' ||
+		cap[i] == '.' || cap[i] == '!' || cap[i] == '?' ||
+		cap[i] == '"' || cap[i] == '(' ||
+		cap[i] == ')' || cap[i] == '{' || cap[i] == '}')
+	{
+		i++;
+	if (cap[i] >= 'a' && cap[i] <= 'z')
+	    {
+		    cap[i] -= 32;
+	    }
+	}
+	else
+	{
+		i++;
+	}
+	}
+	return cap;
 }
+
