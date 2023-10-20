@@ -18,6 +18,7 @@ char *leet(char *s)
 	while (s[strlen] != '\0')
 	{
 		int count = 0;
+
 		while (count < 10)
 		{
 			if (lets[count] == s[strlen])
