@@ -11,13 +11,13 @@
 char *leet(char *s)
 {
 	int strlen = 0;
-	int count = 0;
 
 	char lets[] = "aAeEoOtTlL";
 	char nums[] = "4433007711";
 
 	while (s[strlen] != '\0')
 	{
+		int count = 0;
 		while (count < 10)
 		{
 			if (lets[count] == s[strlen])
