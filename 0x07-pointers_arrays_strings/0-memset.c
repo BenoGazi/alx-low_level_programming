@@ -3,16 +3,16 @@
 /**
  * _memset - fills memory with a constant byte.
  *
- * @s: parameter
- * @b: parameter
- * @n: parameter
+ * @s: pointer parameter
+ * @b: value parameter
+ * @n: byte parameter
  *
  * Return: string
  */
 
-char *_memset(char *s, char b, unsigned int n);
+char *_memset(char *s, char b, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	for (i = 0; i < n; i++)
 	{
