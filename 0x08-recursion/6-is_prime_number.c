@@ -21,7 +21,8 @@ int is_prime_number(int n)
 		return (_prime(n, n - 1));
 	}
 }
-:
+
+
 /**
  * _prime - return prime integer
  *
