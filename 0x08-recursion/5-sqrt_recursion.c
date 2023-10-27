@@ -2,7 +2,7 @@
 
 /**
  *_sqrt_recursion - main function to return squared root
- *
+ *@sqrt: value to loop through
  *@n: parameter
  *Return: natural square root
  */
@@ -26,9 +26,9 @@ int _sqrt_recursion(int n)
  *
  * @n: value to calculate
  *
- * @sqrt: value tp loops through
+ * @sqrt: value to loop through
  *
- * Return: alwys success
+ * Return: always success
  */
 
 int _natural(int n, int sqrt)
