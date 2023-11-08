@@ -9,9 +9,9 @@
 
 void print_dog(struct dog *d)
 {
-	if (d)
+	if (d != NULL)
 	{
-	if (!(d->name))
+	if (d == NULL)
 	{
 		printf("Name: (nil)\n");
 	}
