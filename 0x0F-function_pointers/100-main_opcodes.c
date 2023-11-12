@@ -29,13 +29,16 @@ int main(int argc, char *argv[])
 	i = 0;
 	while (i < j)
 	{
-		printf("%02hhx ", args[i]);
-		i++;
-		if (i == j)
+		if (i == j - 1)
 		{
+			printf("%02hhx\n", args[i]);
 			break;
 		}
+		else
+		{
+			printf("%02hhx ", args[i]);
+		}
+		i++;
 	}
-	printf("\n");
 	return (0);
 }
