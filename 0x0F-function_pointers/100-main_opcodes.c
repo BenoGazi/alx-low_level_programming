@@ -27,10 +27,14 @@ int main(int argc, char *argv[])
 	}
 	args = (char *)main;
 	i = 0;
-	while (args[i] != '\0' && i < j)
+	while (i < j)
 	{
-		printf("%02hhx", args[i]);
+		printf("%02hhx ", args[i]);
 		i++;
+		if (i == j)
+		{
+			break;
+		}
 	}
 	printf("\n");
 	return (0);
