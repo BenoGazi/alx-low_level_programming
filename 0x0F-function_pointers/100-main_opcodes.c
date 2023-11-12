@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	}
 	args = (char *)main;
 	i = 0;
-	while (args[i] != '\0')
+	while (args[i] != '\0' && i < j)
 	{
 		printf("%02hhx", args[i]);
 		i++;
