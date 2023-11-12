@@ -1,5 +1,5 @@
-#ifndef CALC_H
-#define CALC_H
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
 
 #include "function_pointers.h"
 
