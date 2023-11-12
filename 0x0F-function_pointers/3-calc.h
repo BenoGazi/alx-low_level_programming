@@ -1,5 +1,5 @@
-#define CALCULATOR
-#ifndef CALCULATOR
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
 
 
 /**
