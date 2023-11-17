@@ -1,6 +1,7 @@
 #include "lists.h"
 
-/**list_len - prints the number of elements
+/**
+ * list_len - prints the number of elements
  * @h: pointer parameter
  * Return: success
  */
