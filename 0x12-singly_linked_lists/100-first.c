@@ -1,5 +1,6 @@
 #include "lists.h"
 
+void _before(void) __attribute__((constructor));
 /**
  *_before - prints a sentence before main executes
  */
