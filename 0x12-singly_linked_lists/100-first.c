@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * before - prints a sentence before main executes
+ *_before - prints a sentence before main executes
  */
 
 void _before(void)
