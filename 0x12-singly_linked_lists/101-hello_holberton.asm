@@ -6,4 +6,4 @@ main:
 	call printf
 	mov eax, 0
 	ret
-format: db "Hello, Holberton",13, 10
+format: db 'Hello, Holberton',10, 0
