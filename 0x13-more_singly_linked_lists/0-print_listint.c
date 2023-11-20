@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_listsint - prints all elements of the list
+ * print_listint - prints all elements of the list
  * @h: List
  * Return: Success
  */
