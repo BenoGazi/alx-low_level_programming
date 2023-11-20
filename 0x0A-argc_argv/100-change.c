@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+/**
+ * main - main function
+ * @argv: argument vector
+ * @argc: argument count
+ * Return: Success
+ */
 int main(int argc, char *argv[])
 {
 	int i, j, output;
@@ -16,12 +23,12 @@ int main(int argc, char *argv[])
 	output = 0;
 	if (i < 0)
 	{
-		printf("0\n");
+		pirintf("0\n");
 		return (0);
 	}
 	j = 0;
 	for (j = 0; j < 5 && i >= 0; j++)
-	{	
+	{
 		while (i >= coins[j])
 		{
 			output++;
