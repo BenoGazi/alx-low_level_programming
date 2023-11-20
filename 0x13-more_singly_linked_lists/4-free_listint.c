@@ -2,7 +2,7 @@
 
 
 /**
- * free_listint the linked list
+ * free_listint - the linked list
  * @head: head node
  * Return: void
  */
