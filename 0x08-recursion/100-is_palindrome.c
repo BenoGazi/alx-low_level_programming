@@ -8,6 +8,12 @@
  * Return: success
  */
 
+/**
+ * @i: iterator
+ */
+/**
+ * @j: lenght checks
+ */
 int _pal(char *s, int i, int j);
 int rec_len(char *s);
 
@@ -15,7 +21,7 @@ int is_palindrome(char *s)
 {
 	if (*s == 0)
 	{
-		return(1);
+		return (1);
 	}
 	else
 	{
@@ -26,6 +32,7 @@ int is_palindrome(char *s)
 /**
  * rec_len - length
  * @s: string
+ * Return: success
  */
 
 int rec_len(char *s)
@@ -42,9 +49,10 @@ int rec_len(char *s)
 
 /**
  * _pal - checker
- * @s: string
- * @i: iterator
- * @length
+ * @s: string to check
+ * @i: iterator through loop
+ * @j: length
+ * Return: success
  */
 
 int _pal(char *s, int i, int j)
