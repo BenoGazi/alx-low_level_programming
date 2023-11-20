@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	output = 0;
 	if (i < 0)
 	{
-		pirintf("0\n");
+		printf("0\n");
 		return (0);
 	}
 	j = 0;
