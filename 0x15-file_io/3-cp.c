@@ -59,12 +59,16 @@ int main(int argc, char *argv[])
 		byte = read(i, buff, sizeof(buff));
 		if (byte == -1)
 		{
-			fcheck(-1, i, argv[1], 'O');
+			dprintf(STDERR_FILENO, "Error, Can't read from file %s\n", argv[1]);
+			byte = 0;
 		}
 		w = write(j, buff, byte);
 		if (w == -1)
 		{
-			fcheck(-1, j, argv[2], 'W');
+			dprintf(STDERR_FILENO, "Error, Can't write to file %s\n", argv[2]);
+			close(i);
+			close(j);
+			exit(98);
 		}
 	}while (byte > 0);
 	cl_i = close(i);
