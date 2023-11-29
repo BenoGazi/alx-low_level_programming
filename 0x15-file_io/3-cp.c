@@ -51,10 +51,10 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	i = open (argv[1], O_RDONLY);
-	fcheck(i, -1, argv[1], 'O');
+	fcheck(i, -1, argv[1], '0');
 	j = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, corp);
 	fcheck(j, -1, argv[2], 'W');
-	while (byte == 1024)
+	do
 	{
 		byte = read(i, buff, sizeof(buff));
 		if (byte == -1)
@@ -66,10 +66,10 @@ int main(int argc, char *argv[])
 		{
 			fcheck(-1, j, argv[2], 'W');
 		}
-		cl_i = close(i);
-		fcheck(cl_i, i, NULL, 'C');
-		cl_j = close(j);
-		fcheck(cl_j, j, NULL, 'C');
-	}
+	}while (byte > 0);
+	cl_i = close(i);
+	fcheck(cl_i, i, NULL, 'C');
+	cl_j = close(j);
+	fcheck(cl_j, j, NULL, 'C');
 	return (0);
 }
