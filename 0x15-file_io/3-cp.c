@@ -7,7 +7,7 @@ int main(int argc, char *argv[]);
  * @desc: file
  * @fp: name
  * @filename: name of file
- * corp: closing/open
+ * @corp: closing/open
  * Return: nothing
  */
 void fcheck(int fp, int desc, char *filename, char corp)
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "%s", "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	i = open (argv[1], O_RDONLY);
+	i = open(argv[1], O_RDONLY);
 	fcheck(i, -1, argv[1], '0');
 	j = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, corp);
 	fcheck(j, -1, argv[2], 'W');
