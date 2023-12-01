@@ -12,17 +12,17 @@ int main(int argc, char *argv[]);
  */
 void fcheck(int fp, int desc, char *filename, char corp)
 {
-	if (corp == 'C' && desc == -1)
+	if (corp == 'C' && fp == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", desc);
 		exit(100);
 	}
-	else if (corp == 'O' && desc == -1)
+	else if (corp == 'O' && fp == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
-	else if (corp == 'W' && desc == -1)
+	else if (corp == 'W' && fp == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n", filename);
 		exit(99);
