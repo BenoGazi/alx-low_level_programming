@@ -14,7 +14,7 @@ void fcheck(int fp, int desc, char *filename, char corp)
 {
 	if (corp == 'C' && desc == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fp %d\n", fp);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp);
 		exit(100);
 	}
 	else if (corp == 'O' && desc == -1)
@@ -54,23 +54,19 @@ int main(int argc, char *argv[])
 	fcheck(i, -1, argv[1], '0');
 	j = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, corp);
 	fcheck(j, -1, argv[2], 'W');
-	do
+	while (byte == 1024)
 	{
 		byte = read(i, buff, sizeof(buff));
 		if (byte == -1)
 		{
-			dprintf(STDERR_FILENO, "Error, Can't read from file %s\n", argv[1]);
-			byte = 0;
+			fcheck(-1, -1, argv[1], 'O');
 		}
 		w = write(j, buff, byte);
 		if (w == -1)
 		{
-			dprintf(STDERR_FILENO, "Error, Can't write to file %s\n", argv[2]);
-			close(i);
-			close(j);
-			exit(98);
+			fcheck(-1, -1, argv[2], 'W');
 		}
-	}while (byte > 0);
+	}
 	cl_i = close(i);
 	fcheck(cl_i, i, NULL, 'C');
 	cl_j = close(j);
