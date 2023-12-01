@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	i = open(argv[1], O_RDONLY);
-	fcheck(i, -1, argv[1], '0');
+	fcheck(i, -1, argv[1], 'O');
 	j = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, corp);
 	fcheck(j, -1, argv[2], 'W');
 	while (byte == 1024)
