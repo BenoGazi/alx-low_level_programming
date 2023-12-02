@@ -10,7 +10,7 @@ int main(int argc, char *argv[]);
  * @corp: closing/open
  * Return: nothing
  */
-void fcheck(int fp, int desc, char *filename, char corp)
+void fcheck(int desc, int fp, char *filename, char corp)
 {
 	if (corp == 'C' && fp == -1)
 	{
