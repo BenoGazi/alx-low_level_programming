@@ -279,14 +279,14 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	if (i == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		return (1);
 	}
 	head = malloc(sizeof(Elf64_Ehdr));
-	if (!head)
+	if (head == NULL)
 	{
-		cl_elf(i);
+		close(i);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		return (1);
 	}
 	j = read(i, head, sizeof(Elf64_Ehdr));
 	if (j == -1)
@@ -294,7 +294,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		free(head);
 		cl_elf(i);
 		dprintf(STDERR_FILENO, "Error: '%s' : No file\n", argv[1]);
-		exit(98);
+		return (1);
 	}
 	chelf(head->e_ident);
 	printf("ELF Header:\n");
@@ -307,6 +307,11 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	type(head->e_type, head->e_ident);
 	ent(head->e_type, head->e_ident);
 	free(head);
+	if (close(i) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", i);
+		return (1);
+	}
 	cl_elf(i);
 	return (0);
 }
