@@ -187,7 +187,7 @@ void _version(unsigned char *idn)
 
 /**
  *cl_elf - Closes ELF file
- *@idn: File descriptor
+ *@c_elf: File descriptor
  */
 
 void cl_elf(int c_elf)
