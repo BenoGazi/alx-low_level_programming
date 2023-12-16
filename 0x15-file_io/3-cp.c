@@ -12,20 +12,22 @@ int main(int argc, char *argv[]);
  */
 void fcheck(int desc, int fp, char *filename, char corp)
 {
-	if (corp == 'C' && fp == -1)
+	if (corp == 'C' && desc == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", desc);
 		exit(100);
 	}
-	else if (corp == 'O' && fp == -1)
+	else if ((corp == 'O' || corp == 'W') && fp < 0)
 	{
+		if (corp == 'O')
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		else
+			dprintf(STDERR_FILENO, "Can't write to %s\n", filename);
 		exit(98);
 	}
 	else if (corp == 'W' && fp == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't write to %s\n", filename);
-		exit(99);
+		exit(98 +(corp == 'W'));
 	}
 }
 
@@ -54,7 +56,7 @@ int main(int argc, char *argv[])
 	fcheck(i, -1, argv[1], 'O');
 	j = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, corp);
 	fcheck(j, -1, argv[2], 'W');
-	while (byte == 1024)
+	while (byte > 0)
 	{
 		byte = read(i, buff, sizeof(buff));
 		if (byte == -1)
