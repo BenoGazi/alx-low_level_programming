@@ -20,6 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	idx = key_index((const unsigned char *) key, ht->size);
 	i = idx;
 	while (ht->array[i])
+	{
 		if (strcmp(ht->array[i]->key, key) == 0)
 		{
 			free(ht->array[i]->value);
@@ -29,7 +30,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			ht->array[i]->value = cpy;
 			return (1);
 		}
-	i++;
+		i++;
+	}
 	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
 		return (0);
