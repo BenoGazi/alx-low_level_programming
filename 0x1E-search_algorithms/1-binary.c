@@ -30,7 +30,7 @@ int binary_search(int *array, size_t size, int value)
 		/*Print the elemnets of the sub_array being searched*/
 		for (iterator = left; iterator <= right; iterator++)
 		{
-			printf("%d ", array[iterator]);
+			printf("%d, ", array[iterator]);
 		}
 		printf("\n");
 		/*Calculate middle index of the current array*/
