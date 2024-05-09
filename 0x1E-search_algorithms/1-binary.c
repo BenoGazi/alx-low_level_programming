@@ -34,7 +34,7 @@ int binary_search(int *array, size_t size, int value)
 		}
 		printf("\n");
 		/*Calculate middle index of the current array*/
-	       	mid = left + (right - left) / 2;
+		mid = left + (right - left) / 2;
 		/*If the middle element is the target value*/
 		if (array[mid] == value)
 			/*then please....*/
@@ -50,9 +50,7 @@ int binary_search(int *array, size_t size, int value)
 		 *search the left half of the array
 		 */
 		else
-		{
 			right = mid - 1;
-		}
 	}
 	/*Finally, return -1 if the value is not founf i the array*/
 	return (-1);
