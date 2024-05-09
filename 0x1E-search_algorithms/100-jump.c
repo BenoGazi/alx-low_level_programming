@@ -13,11 +13,19 @@ int jump_search(int *array, size_t size, int value)
 	int idx, prev;
 	int _jumps = (int)sqrt((double)size);
 	int _steps = 0;
+	size_t i;
 
 	/*First check if the array is NULL or the size if 0*/
 	if (array == NULL || size == 0)
 		/*If yes, please....*/
 		return (-1);
+	/*Check if the array is sorted in Ascending Order*/
+	for (i = 1; i < size; i++)
+	{
+		if (array[i -1] > array[i])
+			/*If no, please....*/
+			return (-1);
+	}
 	/*Now please get to business and perform the Jump search*/
 	prev = idx = 0;
 	do {
