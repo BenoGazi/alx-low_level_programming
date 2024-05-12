@@ -22,7 +22,7 @@ int jump_search(int *array, size_t size, int value)
 	/*Check if the array is sorted in Ascending Order*/
 	for (i = 1; i < size; i++)
 	{
-		if (array[i -1] > array[i])
+		if (array[i - 1] > array[i])
 			/*If no, please....*/
 			return (-1);
 	}
