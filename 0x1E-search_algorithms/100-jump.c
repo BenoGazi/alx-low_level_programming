@@ -43,7 +43,7 @@ int jump_search(int *array, size_t size, int value)
 	/*Now please perform a linear search between prev and current index*/
 	for (; prev <= idx && prev < (int)size; prev++)
 	{
-		printf("value checked array[%d] = [%d]\n", prev, array[prev]);
+		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
 		/*Now, If its found during the linear search, please return it*/
 		if (array[prev] == value)
 			return (prev);
